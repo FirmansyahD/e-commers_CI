@@ -8,10 +8,20 @@ class User extends CI_Controller{
         $data['konten']="home";
         $this->load->view('template', $data);
     }
-    
+    public function gallery()
+    {
+        $data['konten']="gallery";
+        $this->load->view('template', $data);
+    }
+    public function store()
+    {
+        $data['konten']="store";
+        $this->load->view('template', $data);
+    }
     public function data_diri()
     {
         $data['konten']="data_diri";
         $this->load->view('template', $data);
     }
+    
 }

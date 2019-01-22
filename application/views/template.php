@@ -5,10 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <title>Welcome To | Bootstrap Based Admin Template - Material Design</title>
+    <title>Welcome To | Apple Store</title>
     <!-- Favicon-->
-    <link rel="icon" href="<?=base_url()?>/assets/favicon.ico" type="image/x-icon">
-
+    <link rel="icon" href="<?=base_url()?>/assets/images/Apple.png" type="image/x-icon">
+    
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
@@ -32,7 +32,7 @@
     <link href="<?=base_url()?>/assets/css/themes/all-themes.css" rel="stylesheet" />
 </head>
 
-<body class="theme-red">
+<body class="theme-black">
     <!-- Page Loader -->
     <div class="page-loader-wrapper">
         <div class="loader">
@@ -70,7 +70,10 @@
             <div class="navbar-header">
                 <a href="javascript:void(0);" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"></a>
                 <a href="javascript:void(0);" class="bars"></a>
-                <a class="navbar-brand" href="index.html">ADMINBSB - MATERIAL DESIGN</a>
+                
+                <a class="navbar-icon" href="<?=base_url()?>"><img  src="<?=base_url()?>/assets/images/Apple.png" width="48" height="48" alt="User" /></a>
+                
+                <a class="navbar-brand" href="<?=base_url()?>">Apple Store</a>
             </div>
             <div class="collapse navbar-collapse" id="navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
@@ -276,11 +279,11 @@
             <!-- User Info -->
             <div class="user-info">
                 <div class="image">
-                    <img src="<?=base_url()?>/assets/images/user.png" width="48" height="48" alt="User" />
+                    <img src="<?=base_url()?>/assets/images/profil.png" width="48" height="48" alt="User" />
                 </div>
                 <div class="info-container">
-                    <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">John Doe</div>
-                    <div class="email">john.doe@example.com</div>
+                    <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Firmansyah Dewantara</div>
+                    <div class="email">Firmansyah_dewantara_26rpl@student.smktelkom-mlg.sch.id</div>
                     <div class="btn-group user-helper-dropdown">
                         <i class="material-icons" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">keyboard_arrow_down</i>
                         <ul class="dropdown-menu pull-right">
@@ -302,28 +305,37 @@
                     <li class="header">MAIN NAVIGATION</li>
                     <li class="active">
                         <a href="<?=base_url()?>">
-                            <i class="material-icons">home</i>
-                            <span>HOME</span>
+                            <i class="material-icons">dashboard</i>
+                            <span>Dashboard</span>
                         </a>
+                    </li> 
+                    
+                    <li>
+                        <a href="<?=base_url('index.php/user/store')?>">
+                            <i class="material-icons">store</i>
+                            <span>Store</span>
+                        </a>
+                    
+                    </li>
+                    <li>
+                        <a href="<?=base_url('index.php/user/gallery')?>">
+                            <i class="material-icons">perm_media</i>
+                            <span>Travel Trip Bonus</span>
+                        </a>
+                    
                     </li> 
                     <li>
                         <a href="<?=base_url('index.php/user/data_diri')?>">
                             <i class="material-icons">person</i>
-                            <span>Data Diri</span>
+                            <span>Biodata</span>
                         </a>
-                    </li> 
+                    </li>
+
                 </ul>
             </div>
             <!-- #Menu -->
             <!-- Footer -->
-            <div class="legal">
-                <div class="copyright">
-                    &copy; 2016 - 2017 <a href="javascript:void(0);">AdminBSB - Material Design</a>.
-                </div>
-                <div class="version">
-                    <b>Version: </b> 1.0.5
-                </div>
-            </div>
+            
             <!-- #Footer -->
         </aside>
         <!-- #END# Left Sidebar -->
