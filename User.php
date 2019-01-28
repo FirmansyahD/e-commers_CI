@@ -55,6 +55,19 @@ class User extends CI_Controller {
     }
 
 
-	
+	public function Profil(){
+		$data['konten']="v_profil";
+		$this->load->view('template', $data);
+	}
+	public function Gallery()
+    {
+        $data['konten']="gallery";
+        $this->load->view('template', $data);
+    }
+    public function Event()
+    {
+        $data['konten']="event";
+        $this->load->view('template', $data);
+    }
 }
 ?>

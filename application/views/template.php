@@ -293,7 +293,7 @@
                             <li><a href="javascript:void(0);"><i class="material-icons">shopping_cart</i>Sales</a></li>
                             <li><a href="javascript:void(0);"><i class="material-icons">favorite</i>Likes</a></li>
                             <li role="seperator" class="divider"></li>
-                            <li><a href="javascript:void(0);"><i class="material-icons">input</i>Sign Out</a></li>
+                            <li><a href="<?=base_url('index.php/user/logout')?>"><i class="material-icons">input</i>Sign Out</a></li>
                         </ul>
                     </div>
                 </div>
@@ -302,35 +302,67 @@
             <!-- Menu -->
             <div class="menu">
                 <ul class="list">
-                    <li class="header">MAIN NAVIGATION</li>
+                    <li class="header">Menu</li>
+                    
                     <li class="active">
-                        <a href="<?=base_url()?>">
+                    
+                        <a href="<?=base_url('index.php/Home')?>">
                             <i class="material-icons">dashboard</i>
                             <span>Dashboard</span>
                         </a>
                     </li> 
                     
                     <li>
-                        <a href="<?=base_url('index.php/user/store')?>">
+                        <a href="<?=base_url('index.php/store')?>">
                             <i class="material-icons">store</i>
                             <span>Store</span>
                         </a>
                     
                     </li>
                     <li>
-                        <a href="<?=base_url('index.php/user/gallery')?>">
+                        <a href="<?=base_url('index.php/kategori')?>">
+                            <i class="material-icons">label</i>
+                            <span>Kategori</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="<?=base_url('index.php/barang')?>">
+                            <i class="material-icons">shopping_cart</i>
+                            <span>Barang</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="<?=base_url('index.php/pelanggan/DaftarPelanggan')?>">
+                            <i class="material-icons">group_add</i>
+                            <span>Daftar Pelanggan</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="<?=base_url('index.php/pelanggan/DataPelanggan')?>">
+                            <i class="material-icons">group</i>
+                            <span>Data Pelanggan</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="<?=base_url('index.php/gallery')?>">
                             <i class="material-icons">perm_media</i>
-                            <span>Travel Trip Bonus</span>
+                            <span>Event</span>
                         </a>
                     
                     </li> 
                     <li>
-                        <a href="<?=base_url('index.php/user/data_diri')?>">
+                        <a href="<?=base_url('index.php/profil')?>">
                             <i class="material-icons">person</i>
                             <span>Biodata</span>
                         </a>
                     </li>
-
+                    
+                    <li>
+                        <a href="<?=base_url('index.php/contact')?>">
+                            <i class="material-icons">call</i>
+                            <span>Contact</span>
+                        </a>
+                    </li>
                 </ul>
             </div>
             <!-- #Menu -->
