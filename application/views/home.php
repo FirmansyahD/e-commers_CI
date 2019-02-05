@@ -56,7 +56,7 @@
                     <div class="card">
                         <div class="header">
                             <div class="row clearfix">
-                                <div class="col-xs-12 col-sm-6 align-center">
+                                <div class="col-xs-12 col-sm-6 ">
                                     <h2>Welcome To Apple Store Indonesia</h2>
                                 </div>
                                 

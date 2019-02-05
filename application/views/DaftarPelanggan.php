@@ -1,14 +1,15 @@
 <div class="container-fluid">
 <div class="block-header">
-    <h2>
-        DAFTAR PELANGGAN
-    </h2>
+
 </div>
 <!-- Basic Validation -->
 <div class="row clearfix">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
         <div class="card">
             <div class="header">
+            <h1 class="align-center">
+        Daftar Pelanggan
+    </h1>
                 <?php
                     $notifikasi = $this->session->flashdata('notif');
                     if($notifikasi != null){
@@ -28,6 +29,13 @@
                         <div class="form-line">
                             <input type="text" class="form-control" name="NoTelp">
                             <label class="form-label">No Telphon</label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group form-float">
+                        <div class="form-line">
+                            <input type="text" class="form-control" name="Email">
+                            <label class="form-label">Email</label>
                         </div>
                     </div>
                     <div class="form-group form-float">

@@ -1,30 +1,66 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-class Kategori extends CI_Controller {
-public function index()
+
+/**
+* 
+*/
+class Kategori extends CI_Controller
 {
-$data['konten']="v_kategori";
-$this->load->model('kategori_model');
-$data['data_kategori']=$this->kategori_model->get_kategori();
-$this->load->view('template',$data ,FALSE);
+	
+	public function __construct()
+	{
+		parent::__construct();
+		$this->load->model('m_kategori','kat');
+	}
+	public function index()
+	{
+		$data['tampil_kategori']=$this->kat->menampilkan();
+		$data['konten']="v_kategori";
+		$data['judul']= "Laman Kategori";
+		$this->load->view('template', $data);
+	}
+	public function tambah()
+	{
+		if ($this->input->post('simpan')) {
+			if ($this->kat->simpan_kat()) {
+				$this->session->set_flashdata('pesan','Sukses Menambah Kategori');
+				redirect('kategori','refresh');
+			}else{
+				$this->session->set_flashdata('pesan', 'Gagal Menambah Kategori');
+				redirect('kategori','refresh');
+			}
+		}
+	}
+	public function hapus($id_kategori)
+	{
+		if ($this->kat->hapus($id_kategori)) {
+			$this->session->set_flashdata('pesan', 'Sukses Menghapus');
+			redirect('kategori','refresh');
+		}else{
+			$this->session->set_flashdata('pesan', 'Gagal Menghapus');
+			redirect('kategori','refresh');
+		}
+	}
+	
+	public function edit_kategori($id)
+	{
+		$data=$this->kat->detail($id);
+		echo json_encode($data);
+	}
+	public function kategori_update()
+	{
+		if ($this->input->post('edit')) {
+			if ($this->kat->edit_kat()) {
+				$this->session->set_flashdata('pesan', 'Sukses Update Kategori');
+				redirect('kategori','refresh');
+			}
+		} else {
+			$this->session->set_flashdata('pesan', 'Gagal Update Kategori');
+			redirect('kategori','refresh');
+		}
+		
+	}
 }
-public function simpan_kategori()
-{
-$this->form_validation->set_rules('nama_kategori', 'Nama Kategori',
-'trim|required', array('required' => 'nama kategori harus diisi'));
-if ($this->form_validation->run() == TRUE) {
-$this->load->model('kategori_model','kat');
-$masuk=$this->kat->masuk_db();
-if($masuk==true){
-$this->session->set_flashdata('pesan', 'sukses masuk');
-} else {
-$this->session->set_flashdata('pesan', 'gagal masuk');
-}
-redirect(base_url('index.php/kategori'),'refresh');
-} else {
-$this->session->set_flashdata('pesan', validation_errors());
-redirect(base_url('index.php/kategori'),'refresh');
-}
-}
-}
+
+/* End of file Kategori.php */
 ?>

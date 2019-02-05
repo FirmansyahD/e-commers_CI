@@ -8,6 +8,7 @@
         "nama_pembeli" => $this->input->post('NamaPelanggan'),
         "alamat" => $this->input->post('Alamat'),
         "no_telp" => $this->input->post('NoTelp'),
+        "Email" => $this->input->post('Email'),
         "username" => $this->input->post('Username'),
         "password" => $this->input->post('Password'),
       );

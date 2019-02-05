@@ -48,6 +48,7 @@ class pelanggan extends CI_Controller {
             $this->form_validation->set_rules('NamaPelanggan', 'NamaPelanggan', 'trim|required');
             $this->form_validation->set_rules('Alamat', 'Alamat', 'trim');
             $this->form_validation->set_rules('NoTelp', 'NoTelp', 'trim|required|numeric');
+            $this->form_validation->set_rules('Email', 'Email', 'trim|required|valid_email');
             $this->form_validation->set_rules('Username', 'Username', 'trim|required');
             $this->form_validation->set_rules('Password', 'Password', 'trim|required');
 

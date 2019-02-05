@@ -1,70 +1,136 @@
 <div class="block-header">
+
 </div>
-<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-<div class="card">
-<div class="header">
+<!-- Basic Table -->
 <div class="row clearfix">
-<div class="col-xs-12 col-sm-6">
-</div>
-</div>
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+    <div class="card">
+        <div class="header">
+            <center>        <h1>Kategori</h1>
+</center>
+            <?php
+                $notifikasi = $this->session->flashdata('notif');
+                if($notifikasi != null){
+                    echo '<div class="alert alert-danger">'.$notifikasi.'</div>';
+                }
+            ?>
+            <a href="#tambah" data-toggle="modal"width="100%" class="btn bg-light-blue waves-effect">Tambah</a></center>
+        </div>
+        
+        <div class="body table-responsive">
 
-
-<div class="body">
-
-<h1 style="text-align:center;">Kategori</h1>
-<div class="row">
-<a style="margin: 35px;margin-left: 1px;" href="#tambah"
-class="btn btn-primary" data-toggle="modal">
-<span class="glyphicon glyphicon-plus"></span> Tambah</a>
-<table class="table table-hover table-striped">
-<tr>
-<th>NO</th><th>ID</th><th>NAMA KATEGORI</th>
-</tr>
-<?php
-$no=0;
-foreach ($data_kategori as $dt_kat) {
-$no++;
-echo '<tr>
-
-<td>'.$no.'</td>
-<td>'.$dt_kat->id_kategori.'</td>
-<td>'.$dt_kat->nama_kategori.'</td>
-</tr>';
-}
-?>
+<table id="tmbh" class="table table-hover table-stripped">
+	<thead>
+		<tr class="align-center">
+			<td>NO</td>
+			<td>ID Kategori</td>
+			<td>Nama Kategori</td>
+			<td>Aksi</td>
+		</tr>
+	</thead>
+	<tbody>
+		<?php $no = 0;foreach ($tampil_kategori as $kat):
+			$no++;?>
+		<tr class="align-center">
+			<td><?= $no?></td>
+			<td><?=$kat->id_kategori?></td>
+			<td><?=$kat->nama_kategori?></td>
+			<td>
+				<a href="#edit" onclick="edit('<?=$kat->id_kategori?>')" data-toggle="modal" class="btn btn-primary">
+					Ubah
+				</a>
+				<a href="<?=base_url('index.php/kategori/hapus/'.$kat->id_kategori)?>" onclick="return confirm('Apakah Anda Yakin ?')" class="btn btn-danger">
+					Hapus
+				</a>
+			</td>
+		</tr>
+	<?php endforeach?>
+	<?php
+    if($this->session->flashdata('pesan')!= null){
+      echo"<div class='alert alert-success' style='width:200px'>".$this->session->flashdata('pesan')."</div";
+       }?>
+	</tbody>
 </table>
-<?php if($this->session->flashdata('pesan')!=null): ?>
-<div class="alert alert-danger">
-<?= $this->session->flashdata('pesan');?></div>
-<?php endif ?>
-</div>
-</div>
-</div>
-</div>
+
 <div class="modal fade" id="tambah">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header" style="color:white;"><h2>Tambah Kategori</h2>
+				<button class="close" data-dismiss="modal">
+					<span aria-hidden="true">&times;</span>
+					<span class="sr-only">Close</span>
+				</button>
+			</div>
+			<div class="modal-body"> 
+			<form action="<?=base_url('index.php/kategori/tambah')?>" method="post">
+				<table>
+					<tr>
+						<td>Nama Kategori</td>
+						<td><input type="text" name="nama_kategori" required class="form-control"></td>
+					</tr>
+				</table>
+				<br>
+				<input type="submit" name="simpan" value="Simpan" class="btn btn-success">
+			</form>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div class="modal fade" id="edit">
 <div class="modal-dialog">
-<div class="modal-content">
-<div class="modal-header">
-
-<button type="button" class="sr-only" data-dismiss="modal">Close<span aria-
-hidden="true">&times;</span></button>
-
-<h4 class="modal-title">Tambah Kategori</h4>
+	<div class="modal-content">
+		<div class="modal-header" style="color:white;">
+			<center><h2>Edit Kategori</h2></center>
+			<button class="close" data-dismiss="modal">
+					<span aria-hidden="true">&times;</span>
+					<span class="sr-only">Close</span>
+			</button>
+		</div>
+		<div class="modal-body">
+			<form action="<?=base_url('index.php/kategori/kategori_update')?>" method="post">
+				<input type="hidden" name="id_kategori_lama" id="id_kategori_lama">
+				<table>
+				<tr>
+					
+					<td><input type="hidden" name="id_kategori" id="id_kategori" required class="form-control">
+					</td>
+				</tr>
+				<tr>
+					<td>Nama Kategori </td>
+					<td>
+					<input type="text" id="nama_kategori" name="nama_kategori" required class="form-control">
+					</td>
+				</tr>
+				</table>
+				<input type="submit" name="edit" value="Simpan" class="btn btn-success">
+			</form>
+		</div>
+		<div class="modal-footer">
+			<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		</div>
+	</div>
 </div>
-<div class="modal-body">
-<form action="<?=base_url('index.php/kategori/simpan_kategori')?>"
-method="post">
-Nama Kategori
-<input type="text" name="nama_kategori" class="form-control"><br>
-<input type="submit" name="simpan" value="Simpan" class="btn btn-success">
-</form>
 </div>
-<div class="modal-footer">
-
-<button type="button" class="btn btn-default" data-
-dismiss="modal">Close</button>
-
-</div>
-</div><!-- /.modal-content -->
-</div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#tmbh').DataTable();
+	});
+</script>
+<script type="text/javascript">
+	function edit(a){
+		$.ajax({
+			type:"post",
+		url:"<?=base_url()?>index.php/kategori/edit_kategori/"+a,dataType:"json",
+		success:function(data){
+			$("#id_kategori").val(data.id_kategori);
+			$("#nama_kategori").val(data.nama_kategori);
+			$("#id_kategori_lama").val(data.id_kategori);
+		}
+		});
+	}
+</script>

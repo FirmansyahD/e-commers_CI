@@ -1,11 +1,13 @@
 <div class="block-header">
-<h2>Data Pelanggan</h2>
+
 </div>
 <!-- Basic Table -->
 <div class="row clearfix">
 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
     <div class="card">
         <div class="header">
+            <center>        <h1>Data Pelanggan</h1>
+</center>
             <?php
                 $notifikasi = $this->session->flashdata('notif');
                 if($notifikasi != null){
@@ -21,6 +23,7 @@
                         <th>NAMA PEMBELI</th>
                         <th>ALAMAT</th>
                         <th>NO HP</th>
+                        <th>EMAIL</th>
                         <th>USERNAME</th>
                         <th>PASSWORD</th>
                         <th>Opsi</th>
@@ -36,6 +39,7 @@
                                     <td>$pelanggan->nama_pembeli</td>
                                     <td>$pelanggan->alamat</td>
                                     <td>$pelanggan->no_telp</td>
+                                    <td>$pelanggan->Email</td>
                                     <td>$pelanggan->username</td>
                                     <td>$pelanggan->password</td>
                                     <td>
@@ -63,6 +67,13 @@
                                                         <div class='form-line'>
                                                             <input type='text' class='form-control' name='NoTelp' value='".$pelanggan->no_telp."'>
                                                             <label class='form-label'>No Telphon</label>
+                                                        </div>
+                                                    </div>
+                                                    
+                                                    <div class='form-group form-float'>
+                                                        <div class='form-line'>
+                                                            <input type='text' class='form-control' name='Email' value='".$pelanggan->Email."'>
+                                                            <label class='form-label'>Email</label>
                                                         </div>
                                                     </div>
                                                     <div class='form-group form-float'>

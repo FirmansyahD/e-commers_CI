@@ -429,9 +429,8 @@
         }
         
         .store {
-            background-image: url("Gambar/4.jpg");
-            background-size: 100%;
-            width: 500px;
+            background-size: 50%;
+            width: 200px;
             height: 290px;
             opacity: 0.9;
             border-radius: 10px;
@@ -440,4 +439,5 @@
             -ms-border-radius: 10px;
             -o-border-radius: 10px;
             float: right;
+            margin-top: -30px;
         }

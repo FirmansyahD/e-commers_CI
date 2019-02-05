@@ -1,77 +1,39 @@
-
-            <div class="block-header align-center">
-                <h1>Store</h1>
-            </div>
-            <!-- Basic Example -->
-            <div class="row clearfix">
-                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-                    <div class="card">
-                        <div class="header bg-black">
-                            <h2>
-                                I-Phone XS <small>US$ 1.099 (Rp 16,2 juta)</small>
-                            </h2>
-                            <ul class="header-dropdown m-r--5">
-                                <li class="dropdown">
-                                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                                        <i class="material-icons">more_vert</i>
-                                    </a>
-                                    <ul class="dropdown-menu pull-right">
-                                        <li><a href="javascript:void(0);">Beli</a></li>
-                                        <li><a href="javascript:void(0);">Tandai</a></li>
-                                        <li><a href="javascript:void(0);">Troli</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="body">
-                            <img src="<?=base_url()?>/assets/images/1.jpg"width="100%"  alt="">
-                            </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-                <div class="card">
-                        <div class="header bg-grey">
-                            <h2>
-                                Mac-Book XS <small>US$ 1.199 (Rp 12,2 juta)</small>
-                            </h2>
-                            <ul class="header-dropdown m-r--5">
-                                <li class="dropdown">
-                                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                                        <i class="material-icons">more_vert</i>
-                                    </a>
-                                    <ul class="dropdown-menu pull-right">
-                                        <li><a href="javascript:void(0);">Beli</a></li>
-                                        <li><a href="javascript:void(0);">Tandai</a></li>
-                                        <li><a href="javascript:void(0);">Troli</a></li>
-                                    </ul>
-                                </li>
-                            </ul>   
-                        </div>
-                        <div class="body">
-                            <img src="<?=base_url()?>/assets/images/2.jpg"width="100%" height="100%" alt="">
-                            </div></div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-                <div class="card">
-                        <div class="header bg-black">
-                            <h2>
-                                Mac-Book Pro <small>US$ 1.399 (Rp 18,2 juta)</small>
-                            </h2>
-                            <ul class="header-dropdown m-r--5">
-                                <li class="dropdown">
-                                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                                        <i class="material-icons">more_vert</i>
-                                    </a>
-                                    <ul class="dropdown-menu pull-right">
-                                        <li><a href="javascript:void(0);">Beli</a></li>
-                                        <li><a href="javascript:void(0);">Tandai</a></li>
-                                        <li><a href="javascript:void(0);">Troli</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="body">
-                            <img src="<?=base_url()?>/assets/images/3.jpg"width="100%" height="100%" alt="">
-                            </div>               </div>
-            </div>
-            
+<div class="block-header">
+<h1 class="align-center">Store</h1>
+</div>
+  <div class="row clearfix">
+      
+  <?php foreach($tampil_motor as $tb):?>
+<div class="col-lg-4 col-md-4 col-sm-8 col-xs-8">
+    <div class="card">
+          
+        <div class="header">
+              <center><h2 style="color:black!important;"><?=$tb->nama_motor?></h2></center><br>
+            <?php
+                $notifikasi = $this->session->flashdata('notif');
+                if($notifikasi != null){
+                    echo '<div class="alert alert-danger">'.$notifikasi.'</div>';
+                }
+            ?>
+             
+        </div>
+                      			<div class="white-header" style="color:black!important;background-color:orange !important;font-weight:bold!important;">
+						  			
+                      			</div>
+								<div class="row">
+									<div class="col-sm-6 col-xs-6 goleft">
+									</div>
+									
+	                      		</div>
+	                      		<div class="centered">
+										<img src="<?=base_url('assets/img/')?><?=$tb->foto_cover?>" style="margin-left:10px"width="288" height="180">
+                                  </div>
+                                  
+								  <div class="white-header" style="height:auto;margin-top:30px;color:black!important;">
+								  <button class="hover"style="width:100%;border-radius:20px;border:none;background-color: #15A5BF;"><h3 style=color:#373C3A;><?="Rp. ".number_format($tb->harga,0,",",".")?></h3></button>
+                      			</div>
+                      		</div>
+							
+                      	</div>
+		<?php endforeach ?>
+</div>   	

@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <title>Welcome To | Apple Store</title>
+    <title>Welcome To | OTO Driver Shop</title>
     <!-- Favicon-->
-    <link rel="icon" href="<?=base_url()?>/assets/images/Apple.png" type="image/x-icon">
+    <link rel="icon" href="https://www.oto.com/web/image/oto/favicon.ico" type="image/x-icon">
     
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
@@ -32,36 +32,20 @@
     <link href="<?=base_url()?>/assets/css/themes/all-themes.css" rel="stylesheet" />
 </head>
 
-<body class="theme-black">
+<body class="theme-white">
     <!-- Page Loader -->
-    <div class="page-loader-wrapper">
-        <div class="loader">
-            <div class="preloader">
-                <div class="spinner-layer pl-red">
-                    <div class="circle-clipper left">
-                        <div class="circle"></div>
-                    </div>
-                    <div class="circle-clipper right">
-                        <div class="circle"></div>
-                    </div>
-                </div>
-            </div>
-            <p>Please wait...</p>
-        </div>
-    </div>
     <!-- #END# Page Loader -->
     <!-- Overlay For Sidebars -->
     <div class="overlay"></div>
     <!-- #END# Overlay For Sidebars -->
     <!-- Search Bar -->
     <div class="search-bar">
-        <div class="search-icon">
+    <div class="search-icon">
             <i class="material-icons">search</i>
         </div>
+        
         <input type="text" placeholder="START TYPING...">
-        <div class="close-search">
-            <i class="material-icons">close</i>
-        </div>
+       
     </div>
     <!-- #END# Search Bar -->
     <!-- Top Bar -->
@@ -71,9 +55,7 @@
                 <a href="javascript:void(0);" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"></a>
                 <a href="javascript:void(0);" class="bars"></a>
                 
-                <a class="navbar-icon" href="<?=base_url()?>"><img  src="<?=base_url()?>/assets/images/Apple.png" width="48" height="48" alt="User" /></a>
-                
-                <a class="navbar-brand" href="<?=base_url()?>">Apple Store</a>
+                <a class="navbar-icon" href="<?=base_url()?>"><img  src="<?=base_url()?>/assets/images/Apple.png" width="130" height="48" alt="User" /></a>
             </div>
             <div class="collapse navbar-collapse" id="navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
@@ -282,10 +264,10 @@
                     <img src="<?=base_url()?>/assets/images/profil.png" width="48" height="48" alt="User" />
                 </div>
                 <div class="info-container">
-                    <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Firmansyah Dewantara</div>
-                    <div class="email">Firmansyah_dewantara_26rpl@student.smktelkom-mlg.sch.id</div>
+                    <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"style="color:black">Firmansyah Dewantara</div>
+                    <div class="email"style="color:black">Firmansyah_dewantara_26rpl@student.smktelkom-mlg.sch.id</div>
                     <div class="btn-group user-helper-dropdown">
-                        <i class="material-icons" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">keyboard_arrow_down</i>
+                        <button class="btn btn-default btn-circle-lg waves-effect waves-circle waves-float" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"><i class="material-icons">settings</i></button> 
                         <ul class="dropdown-menu pull-right">
                             <li><a href="javascript:void(0);"><i class="material-icons">person</i>Profile</a></li>
                             <li role="seperator" class="divider"></li>
@@ -308,61 +290,85 @@
                     
                         <a href="<?=base_url('index.php/Home')?>">
                             <i class="material-icons">dashboard</i>
-                            <span>Dashboard</span>
+                            <span style="color:#c7c7c7">Dashboard</span>
                         </a>
                     </li> 
-                    
+                    <li style="margin-left:23px;">
+                        <a href="javascript:void(0);" class="menu-toggle">
+                            <i class="material-icons"></i>
+                            <span style="color:#c7c7c7">Toko Motor</span>
+                        </a>
+                        <ul class="ml-menu">
                     <li>
+                    
                         <a href="<?=base_url('index.php/store')?>">
                             <i class="material-icons">store</i>
-                            <span>Store</span>
+                            <span style="color:#c7c7c7" >Toko</span>
                         </a>
                     
                     </li>
+                    <li>
+                    
+                        <a href="<?=base_url('index.php/transaksi')?>">
+                            <i class="material-icons">store</i>
+                            <span style="color:#c7c7c7" >Kasir</span>
+                        </a>
+                    
+                    </li>
+  
                     <li>
                         <a href="<?=base_url('index.php/kategori')?>">
                             <i class="material-icons">label</i>
-                            <span>Kategori</span>
+                            <span style="color:#c7c7c7">Kategori</span>
                         </a>
                     </li>
                     <li>
-                        <a href="<?=base_url('index.php/barang')?>">
-                            <i class="material-icons">shopping_cart</i>
-                            <span>Barang</span>
+                        <a href="<?=base_url('index.php/pesanan')?>">
+                            <i class="material-icons">history   </i>
+                            <span style="color:#c7c7c7">History Pesanan</span>
                         </a>
                     </li>
+                    <li>
+                        <a href="<?=base_url('index.php/motor')?>">
+                            <i class="material-icons">shopping_cart</i>
+                            <span style="color:#c7c7c7">Motor</span>
+                        </a>
+                    </li>
+                    
+                    </ul>
+                    <li style="margin-left:23px;">
+                        <a href="javascript:void(0);" class="menu-toggle">
+                            <i class="material-icons"></i>
+                            <span style="color:#c7c7c7">Pelanggan</span>
+                        </a>
+                        <ul class="ml-menu">
                     <li>
                         <a href="<?=base_url('index.php/pelanggan/DaftarPelanggan')?>">
                             <i class="material-icons">group_add</i>
-                            <span>Daftar Pelanggan</span>
+                            <span style="color:#c7c7c7">Daftar Pelanggan</span>
                         </a>
                     </li>
                     <li>
                         <a href="<?=base_url('index.php/pelanggan/DataPelanggan')?>">
                             <i class="material-icons">group</i>
-                            <span>Data Pelanggan</span>
+                            <span style="color:#c7c7c7">Data Pelanggan</span>
                         </a>
                     </li>
+                    </ul>
                     <li>
                         <a href="<?=base_url('index.php/gallery')?>">
                             <i class="material-icons">perm_media</i>
-                            <span>Event</span>
+                            <span style="color:#c7c7c7">Event</span>
                         </a>
                     
                     </li> 
                     <li>
                         <a href="<?=base_url('index.php/profil')?>">
                             <i class="material-icons">person</i>
-                            <span>Biodata</span>
+                            <span style="color:#c7c7c7">Biodata</span>
                         </a>
                     </li>
                     
-                    <li>
-                        <a href="<?=base_url('index.php/contact')?>">
-                            <i class="material-icons">call</i>
-                            <span>Contact</span>
-                        </a>
-                    </li>
                 </ul>
             </div>
             <!-- #Menu -->

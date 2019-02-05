@@ -6,6 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <title>Admin</title>
+    <style>
+
+</style>
+
     <!-- Favicon-->
     <link rel="icon" href="<?=base_url()?>/assets/favicon.ico" type="image/x-icon">
 
@@ -31,8 +35,14 @@
     <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
     <link href="<?=base_url()?>/assets/css/themes/all-themes.css" rel="stylesheet" />
 </head>
-
-<body class="login-page bg-black">
+<body class="login-page">
+<img src="<?=base_url()?>/assets/images/background-hd-2.jpg" style="width: 120%;
+     height: 120%;
+    margin-left:-20px;
+     position: fixed;
+    margin-top:-150px;
+     float: left;
+     left: 0;"alt="gambar"  />
     <div class="login-box">
 	<div class="card1"style="margin-top:150px">
 		<div class="ok">
@@ -43,18 +53,18 @@
             </div>
 		</div>
 	</div>
-        <div class="card bg-grey">
+        <div class="card bg-white">
             <div class="body">
                 <form id="form_login" method="POST" action="<?=base_url(); ?>index.php/user/Login">
                 <div class="logo">
-                        <a href="javascript:void(0);"><img src="<?=base_url()?>/assets/gambar/apple.png"width="20%"class="margin-left:20px" alt=""> Apple<span> Store</span></a>
+                        <a href="javascript:void(0);"><img src="<?=base_url()?>/assets/gambar/apple.png"width="20%"class="margin-left:20px" alt=""> <span> </span></a>
                         
                     </div>
                     <div class="msg"> </div>
                     <p id="error" style="color:grey"></p>
                     <div class="input-group">
                         <span class="input-group-addon">
-                            <i class="material-icons">email</i>
+                            <i class="material-icons">person</i>
                         </span>
                         <div class="form-line">
                             <input type="text"style="padding-left:6px" class="form-control" name="Username" placeholder="Username" required autofocus>
@@ -71,7 +81,7 @@
 
                     <div class="row">
                         <div class="col-xs-12">
-                            <input class="btn btn-block bg-black waves-effect" type="submit" id="masuk" name="masuk" value="MASUK">
+                            <input class="btn btn-block bg-cyan waves-effect" type="submit" id="masuk" name="masuk" value="MASUK">
                         </div>
                     </div>
                 </form>
